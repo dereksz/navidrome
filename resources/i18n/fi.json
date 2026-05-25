@@ -306,7 +306,8 @@
         "manageUsers": "Hallitse käyttäjien pääsyä",
         "viewDetails": "Näytä tiedot",
         "quickScan": "Nopea skannaus",
-        "fullScan": "Täysi skannaus"
+        "fullScan": "Täysi skannaus",
+        "pruneMissing": "Poista puuttuvat"
       },
       "notifications": {
         "created": "Kirjasto luotu onnistuneesti",
@@ -316,6 +317,8 @@
         "scanCompleted": "Kirjaston skannaus valmistunut",
         "quickScanStarted": "Nopea skannaus aloitettu",
         "fullScanStarted": "Täysi skannaus aloitettu",
+        "pruneMissingCompleted": "Puuttuvat tiedostot poistettu",
+        "pruneMissingError": "Virhe puuttuvien tiedostojen poistossa. Tarkista lokit",
         "scanError": "Virhe skannauksen käynnistyksessä. Tarkista lokit"
       },
       "validation": {

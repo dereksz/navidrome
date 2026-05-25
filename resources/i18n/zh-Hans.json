@@ -307,6 +307,7 @@
         "scan": "扫描媒体库",
         "quickScan": "快速扫描",
         "fullScan": "完全扫描",
+        "pruneMissing": "清理缺失项",
         "manageUsers": "管理用户权限",
         "viewDetails": "查看详情"
       },
@@ -317,6 +318,8 @@
         "scanStarted": "媒体库扫描已开始",
         "quickScanStarted": "快速扫描已开始",
         "fullScanStarted": "完全扫描已开始",
+        "pruneMissingCompleted": "缺失文件已清理",
+        "pruneMissingError": "清理缺失文件时出错。请检查日志",
         "scanError": "开始扫描时出错，请检查日志",
         "scanCompleted": "媒体库扫描已完成"
       },

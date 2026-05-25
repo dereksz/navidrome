@@ -306,7 +306,8 @@
         "manageUsers": "Administrer brugeradgang",
         "viewDetails": "Se detaljer",
         "quickScan": "hurtig skanning",
-        "fullScan": "Fuld skanning"
+        "fullScan": "Fuld skanning",
+        "pruneMissing": "Ryd manglende"
       },
       "notifications": {
         "created": "Bibliotek oprettet",
@@ -316,6 +317,8 @@
         "scanCompleted": "Biblioteksscanning fuldført",
         "quickScanStarted": "hurtig skanning startet",
         "fullScanStarted": "Fuld skanning startet",
+        "pruneMissingCompleted": "Manglende filer ryddet",
+        "pruneMissingError": "Fejl ved rydning af manglende filer. Tjek loggen",
         "scanError": "Kan ikke starte skanning. Tjek loggen"
       },
       "validation": {

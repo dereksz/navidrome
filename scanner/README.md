@@ -199,7 +199,9 @@ flowchart TD
 
 ### Phase 2: Missing Tracks Processing (`phase_2_missing_tracks.go`)
 
-This phase identifies tracks that have moved or been deleted.
+This phase identifies tracks that have moved or been deleted. Deleted tracks are
+kept as missing until an admin uses the explicit Prune Missing library action,
+which runs `core/prune_missing.sql`.
 
 ```mermaid
 flowchart TD

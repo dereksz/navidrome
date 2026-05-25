@@ -307,6 +307,7 @@
         "scan": "Arakatu liburutegia",
         "quickScan": "Araketa bizkorra",
         "fullScan": "Araketa sakona",
+        "pruneMissing": "Garbitu falta direnak",
         "manageUsers": "Kudeatu erabiltzaileen sarbidea",
         "viewDetails": "Ikusi xehetasunak"
       },
@@ -317,6 +318,8 @@
         "scanStarted": "Liburutegiaren araketa hasi da",
         "quickScanStarted": "Araketa bizkorra hasi da",
         "fullScanStarted": "Araketa sakona hasi da",
+        "pruneMissingCompleted": "Falta diren fitxategiak garbitu dira",
+        "pruneMissingError": "Errorea falta diren fitxategiak garbitzean. Aztertu erregistroak",
         "scanError": "Errorea araketa abiaraztean. Aztertu erregistroak",
         "scanCompleted": "Liburutegiaren araketa amaitu da"
       },

@@ -306,7 +306,8 @@
         "manageUsers": "Gestionar el acceso de usarios",
         "viewDetails": "Ver detalles",
         "quickScan": "Escaneo rápido",
-        "fullScan": "Escaneo completo"
+        "fullScan": "Escaneo completo",
+        "pruneMissing": "Purgar faltantes"
       },
       "notifications": {
         "created": "La biblioteca se creó correctamente",
@@ -316,6 +317,8 @@
         "scanCompleted": "El escaneo de la biblioteca se completó",
         "quickScanStarted": "Escaneo rápido ha comenzado",
         "fullScanStarted": "Escaneo completo ha comenzado",
+        "pruneMissingCompleted": "Archivos faltantes purgados",
+        "pruneMissingError": "Error al purgar archivos faltantes. Revisa los registros",
         "scanError": "Error al iniciar el escaneo. Revisa los registros"
       },
       "validation": {

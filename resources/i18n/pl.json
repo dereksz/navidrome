@@ -305,7 +305,8 @@
         "manageUsers": "Zarządzaj Dostępami Użytkownika",
         "viewDetails": "Zobacz Szczegóły",
         "quickScan": "Szybkie Skanowanie",
-        "fullScan": "Pełne Skanowanie"
+        "fullScan": "Pełne Skanowanie",
+        "pruneMissing": "Wyczyść brakujące"
       },
       "notifications": {
         "created": "Biblioteka utworzona prawidłowo",
@@ -315,6 +316,8 @@
         "scanCompleted": "Zakończono skan biblioteki",
         "quickScanStarted": "Szybkie skanowanie rozpoczęte",
         "fullScanStarted": "Pełne skanowanie rozpoczęte",
+        "pruneMissingCompleted": "Brakujące pliki wyczyszczone",
+        "pruneMissingError": "Błąd podczas czyszczenia brakujących plików. Sprawdź logi",
         "scanError": "Błąd podczas startu skanowania. Sprawdź logi"
       },
       "validation": {

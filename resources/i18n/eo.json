@@ -306,7 +306,8 @@
         "manageUsers": "Agordi Uzantan Aliron",
         "viewDetails": "Montri Informojn",
         "quickScan": "Rapida Skano",
-        "fullScan": "Plena Skano"
+        "fullScan": "Plena Skano",
+        "pruneMissing": "Forigi mankantajn"
       },
       "notifications": {
         "created": "Biblioteko kreiĝis sukcese",
@@ -316,6 +317,8 @@
         "scanCompleted": "Biblioteka skano finiĝis",
         "quickScanStarted": "Rapida skano komenciĝis",
         "fullScanStarted": "Plena skano komenciĝis",
+        "pruneMissingCompleted": "Mankantaj dosieroj forigitaj",
+        "pruneMissingError": "Eraro dum forigo de mankantaj dosieroj. Kontrolu la protokolojn",
         "scanError": "Eraro de skana komenco. Kontrolu la protokolojn"
       },
       "validation": {

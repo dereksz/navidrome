@@ -2,23 +2,31 @@ package core
 
 import (
 	"context"
+	_ "embed"
 	"fmt"
 	"slices"
 	"sync"
 	"time"
 
 	"github.com/Masterminds/squirrel"
+	"github.com/deluan/rest"
+	"github.com/navidrome/navidrome/db"
 	"github.com/navidrome/navidrome/log"
 	"github.com/navidrome/navidrome/model"
 	"github.com/navidrome/navidrome/model/request"
 	"github.com/navidrome/navidrome/utils/slice"
 )
 
+//go:embed prune_missing.sql
+var pruneMissingSQL string
+
 type Maintenance interface {
 	// DeleteMissingFiles deletes specific missing files by their IDs
 	DeleteMissingFiles(ctx context.Context, ids []string) error
 	// DeleteAllMissingFiles deletes all files marked as missing
 	DeleteAllMissingFiles(ctx context.Context) error
+	// PruneMissing deletes all missing files and prunes now-empty albums and artists
+	PruneMissing(ctx context.Context) error
 }
 
 type maintenanceService struct {
@@ -38,6 +46,27 @@ func (s *maintenanceService) DeleteMissingFiles(ctx context.Context, ids []strin
 
 func (s *maintenanceService) DeleteAllMissingFiles(ctx context.Context) error {
 	return s.deleteMissing(ctx, nil)
+}
+
+func (s *maintenanceService) PruneMissing(ctx context.Context) error {
+	user, ok := request.UserFrom(ctx)
+	if !ok || !user.IsAdmin {
+		return rest.ErrPermissionDenied
+	}
+
+	start := time.Now()
+	if _, err := db.Db().ExecContext(ctx, pruneMissingSQL); err != nil {
+		log.Error(ctx, "Error pruning missing tracks from DB", err)
+		return fmt.Errorf("pruning missing tracks: %w", err)
+	}
+	log.Info(ctx, "Pruned missing tracks from DB", "elapsed", time.Since(start))
+
+	if err := s.ds.GC(ctx); err != nil {
+		log.Error(ctx, "Error running GC after pruning missing tracks", err)
+		return err
+	}
+	s.refreshStatsAsync(ctx, nil)
+	return nil
 }
 
 // deleteMissing handles the deletion of missing files and triggers necessary cleanup operations

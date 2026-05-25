@@ -303,7 +303,8 @@
         "manageUsers": "",
         "viewDetails": "",
         "quickScan": "",
-        "fullScan": ""
+        "fullScan": "",
+        "pruneMissing": "Rydd manglende"
       },
       "notifications": {
         "created": "",
@@ -313,6 +314,8 @@
         "scanCompleted": "",
         "quickScanStarted": "",
         "fullScanStarted": "",
+        "pruneMissingCompleted": "Manglende filer ryddet",
+        "pruneMissingError": "Feil ved rydding av manglende filer. Sjekk loggene",
         "scanError": "Error starte skanning. Sjekk loggene"
       },
       "validation": {

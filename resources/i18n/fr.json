@@ -306,7 +306,8 @@
         "manageUsers": "Gérer les accès utilisateurs",
         "viewDetails": "Voir les détails",
         "quickScan": "Scan Rapide",
-        "fullScan": "Scan Complet"
+        "fullScan": "Scan Complet",
+        "pruneMissing": "Purger les manquants"
       },
       "notifications": {
         "created": "Bibliothèque créée avec succès",
@@ -316,6 +317,8 @@
         "scanCompleted": "Le scan de la bibliothèque est terminé",
         "quickScanStarted": "Scan rapide démarré",
         "fullScanStarted": "Scan complet démarré",
+        "pruneMissingCompleted": "Fichiers manquants purgés",
+        "pruneMissingError": "Erreur lors de la purge des fichiers manquants. Vérifiez les journaux",
         "scanError": "Une erreur est survenue en démarrant le scan. Veuillez regarder les logs"
       },
       "validation": {

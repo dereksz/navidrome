@@ -309,6 +309,7 @@
         "scan": "Scan Library",
         "quickScan": "Quick Scan",
         "fullScan": "Full Scan",
+        "pruneMissing": "Prune Missing",
         "manageUsers": "Manage User Access",
         "viewDetails": "View Details"
       },
@@ -319,6 +320,8 @@
         "scanStarted": "Library scan started",
         "quickScanStarted": "Quick scan started",
         "fullScanStarted": "Full scan started",
+        "pruneMissingCompleted": "Missing files pruned",
+        "pruneMissingError": "Error pruning missing files. Check logs",
         "scanError": "Error starting scan. Check logs",
         "scanCompleted": "Library scan completed"
       },

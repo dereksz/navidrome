@@ -307,6 +307,7 @@
         "scan": "Skenovať knižnicu",
         "quickScan": "Rýchly sken",
         "fullScan": "Úplný sken",
+        "pruneMissing": "Vyčistiť chýbajúce",
         "manageUsers": "Spravovať prístup používateľov",
         "viewDetails": "Zobraziť detaily"
       },
@@ -317,6 +318,8 @@
         "scanStarted": "Skenovanie knižnice spustené",
         "quickScanStarted": "Rýchly sken spustený",
         "fullScanStarted": "Úplný sken spustený",
+        "pruneMissingCompleted": "Chýbajúce súbory vyčistené",
+        "pruneMissingError": "Chyba pri čistení chýbajúcich súborov. Skontrolujte logy",
         "scanError": "Chyba pri spustení skenu. Skontrolujte logy",
         "scanCompleted": "Skenovanie knižnice dokončené"
       },

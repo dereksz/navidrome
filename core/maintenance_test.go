@@ -5,6 +5,7 @@ import (
 	"errors"
 	"sync"
 
+	"github.com/deluan/rest"
 	"github.com/navidrome/navidrome/model"
 	"github.com/navidrome/navidrome/model/request"
 	"github.com/navidrome/navidrome/tests"
@@ -160,6 +161,16 @@ var _ = Describe("Maintenance", func() {
 			err := service.DeleteAllMissingFiles(ctx)
 
 			Expect(err).ToNot(HaveOccurred())
+		})
+	})
+
+	Describe("PruneMissing", func() {
+		It("requires an admin user", func() {
+			ctx := request.WithUser(context.Background(), model.User{ID: "user1", IsAdmin: false})
+
+			err := service.PruneMissing(ctx)
+
+			Expect(err).To(Equal(rest.ErrPermissionDenied))
 		})
 	})
 

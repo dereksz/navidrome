@@ -91,4 +91,20 @@ func deleteMissingFiles(maintenance core.Maintenance) http.HandlerFunc {
 	}
 }
 
+func pruneMissingFiles(maintenance core.Maintenance) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		if err := maintenance.PruneMissing(r.Context()); err != nil {
+			if errors.Is(err, rest.ErrPermissionDenied) {
+				http.Error(w, "Access denied: admin privileges required", http.StatusForbidden)
+				return
+			}
+			http.Error(w, "failed to prune missing files", http.StatusInternalServerError)
+			return
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		_, _ = w.Write([]byte(`{"pruned":true}`))
+	}
+}
+
 var _ model.ResourceRepository = &missingRepository{}

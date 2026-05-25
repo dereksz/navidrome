@@ -306,7 +306,8 @@
         "manageUsers": "Upravljanje dostopa uporabnikov",
         "viewDetails": "Ogled podrobnosti",
         "quickScan": "Hitro skeniranje",
-        "fullScan": "Popolno skeniranje"
+        "fullScan": "Popolno skeniranje",
+        "pruneMissing": "Počisti manjkajoče"
       },
       "notifications": {
         "created": "Knjižnica je uspešno ustvarjena",
@@ -316,6 +317,8 @@
         "scanCompleted": "Skeniranje knjižnice končano",
         "quickScanStarted": "Hitro skeniranje se je začelo",
         "fullScanStarted": "Popolno skeniranje se je začelo",
+        "pruneMissingCompleted": "Manjkajoče datoteke počiščene",
+        "pruneMissingError": "Napaka pri čiščenju manjkajočih datotek. Preverite dnevnike",
         "scanError": "Napaka pri začetku skeniranja. Preverite dnevnike"
       },
       "validation": {

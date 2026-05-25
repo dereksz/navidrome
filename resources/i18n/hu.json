@@ -305,6 +305,7 @@
         "scan": "Könyvtár szkennelése",
         "quickScan": "Gyors szkennelés",
         "fullScan": "Teljes szkennelés",
+        "pruneMissing": "Hiányzók törlése",
         "manageUsers": "Hozzáférés kezelése",
         "viewDetails": "Részletek"
       },
@@ -313,7 +314,9 @@
         "updated": "Könyvtár frissítve",
         "deleted": "Könyvtár törölve",
         "scanStarted": "Szkennelés folyamatban",
-        "scanCompleted": "Könyvtár szkennelés befelyezve"
+        "scanCompleted": "Könyvtár szkennelés befelyezve",
+        "pruneMissingCompleted": "Hiányzó fájlok törölve",
+        "pruneMissingError": "Hiba a hiányzó fájlok törlésekor. Ellenőrizd a naplókat"
       },
       "validation": {
         "nameRequired": "Adj meg egy könyvtárnevet",

@@ -306,7 +306,8 @@
         "manageUsers": "ตั้งค่าการเข้าถึง",
         "viewDetails": "ดูรายละเอียด",
         "quickScan": "สแกนแบบเร็ว",
-        "fullScan": "สแกนแบบเต็ม"
+        "fullScan": "สแกนแบบเต็ม",
+        "pruneMissing": "ล้างรายการที่หายไป"
       },
       "notifications": {
         "created": "สร้างห้องสมุดเรียบร้อย",
@@ -316,6 +317,8 @@
         "scanCompleted": "สแกนห้องสมุดเสร็จแล้ว",
         "quickScanStarted": "เริ่มสแกนแบบเร็ว",
         "fullScanStarted": "เริ่มสแกนแบบเต็ม",
+        "pruneMissingCompleted": "ล้างไฟล์ที่หายไปแล้ว",
+        "pruneMissingError": "เกิดข้อผิดพลาดในการล้างไฟล์ที่หายไป ตรวจสอบบันทึก",
         "scanError": "การเริ่มสแกนผิดพลาด ดูในบันทึก"
       },
       "validation": {

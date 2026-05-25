@@ -308,7 +308,8 @@
         "manageUsers": "Halda kasutajate õigusi",
         "viewDetails": "Vaata üksikasju",
         "quickScan": "Kiirskaneerimine",
-        "fullScan": "Täismahuline skaneerimine"
+        "fullScan": "Täismahuline skaneerimine",
+        "pruneMissing": "Eemalda puuduvad"
       },
       "notifications": {
         "created": "Kogumiku loomine õnnestus",
@@ -318,6 +319,8 @@
         "scanCompleted": "Kogumiku skaneerimine lõppes",
         "quickScanStarted": "Kiirskaneerimine algas",
         "fullScanStarted": "Täismahuline skaneerimine algas",
+        "pruneMissingCompleted": "Puuduvad failid eemaldatud",
+        "pruneMissingError": "Viga puuduvate failide eemaldamisel. Kontrolli logisid",
         "scanError": "Viga skaneerimise käivitamisel. Lisateavet leiad logidest"
       },
       "validation": {

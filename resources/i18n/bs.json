@@ -300,6 +300,7 @@
       },
       "actions": {
         "scan": "Skeniraj biblioteku",
+        "pruneMissing": "Ukloni nedostajuće",
         "manageUsers": "Upravljaj pristupima",
         "viewDetails": "Pogledaj detalje"
       },
@@ -308,7 +309,9 @@
         "updated": "Biblioteka uspješno ažurirana",
         "deleted": "Biblioteka uspješno obrisana",
         "scanStarted": "Skeniranje biblioteke započeto",
-        "scanCompleted": "Skeniranje biblioteke završeno"
+        "scanCompleted": "Skeniranje biblioteke završeno",
+        "pruneMissingCompleted": "Nedostajuće datoteke su uklonjene",
+        "pruneMissingError": "Greška pri uklanjanju nedostajućih datoteka. Provjeri logove"
       },
       "validation": {
         "nameRequired": "Naziv biblioteke je obavezan",

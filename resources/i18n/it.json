@@ -309,6 +309,7 @@
                 "scan": "Scansiona la libreria",
                 "quickScan": "Scansione rapida",
                 "fullScan": "Scansione completa",
+                "pruneMissing": "Elimina mancanti",
                 "manageUsers": "Gestisci accesso utenti",
                 "viewDetails": "Visualizza dettagli"
             },
@@ -319,6 +320,8 @@
                 "scanStarted": "Scansione della libreria avviata",
                 "quickScanStarted": "Scansione rapida avviata",
                 "fullScanStarted": "Scansione completa avviata",
+                "pruneMissingCompleted": "File mancanti eliminati",
+                "pruneMissingError": "Errore durante l’eliminazione dei file mancanti. Controlla i log",
                 "scanError": "Errore durante l'avvio della scansione. Controlla i log",
                 "scanCompleted": "Scansione della libreria completata"
             },

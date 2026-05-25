@@ -306,7 +306,8 @@
         "manageUsers": "管理使用者權限",
         "viewDetails": "查看詳細資料",
         "quickScan": "快速掃描",
-        "fullScan": "完整掃描"
+        "fullScan": "完整掃描",
+        "pruneMissing": "清理缺失項"
       },
       "notifications": {
         "created": "成功建立媒體庫",
@@ -316,6 +317,8 @@
         "scanCompleted": "媒體庫掃描完成",
         "quickScanStarted": "快速掃描已開始",
         "fullScanStarted": "完整掃描已開始",
+        "pruneMissingCompleted": "缺失檔案已清理",
+        "pruneMissingError": "清理缺失檔案時發生錯誤。請檢查日誌",
         "scanError": "掃描啟動失敗，請檢查日誌"
       },
       "validation": {

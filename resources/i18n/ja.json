@@ -303,7 +303,8 @@
         "manageUsers": "ユーザーアクセス管理",
         "viewDetails": "詳細を表示",
         "quickScan": "クイックスキャン",
-        "fullScan": "フルスキャン"
+        "fullScan": "フルスキャン",
+        "pruneMissing": "見つからない項目を削除"
       },
       "notifications": {
         "created": "ライブラリが正常に作成されました",
@@ -313,6 +314,8 @@
         "scanCompleted": "スキャンが完了しました",
         "quickScanStarted": "クイックスキャンを開始しました",
         "fullScanStarted": "フルスキャンを開始しました",
+        "pruneMissingCompleted": "見つからないファイルを削除しました",
+        "pruneMissingError": "見つからないファイルの削除中にエラーが発生しました。ログを確認してください",
         "scanError": "スキャン開始中にエラーが発生。ログを確認してください"
       },
       "validation": {

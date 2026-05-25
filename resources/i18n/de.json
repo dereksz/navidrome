@@ -306,7 +306,8 @@
         "manageUsers": "Zugriff verwalten",
         "viewDetails": "Details ansehen",
         "quickScan": "Schneller Scan",
-        "fullScan": "Kompletter Scan"
+        "fullScan": "Kompletter Scan",
+        "pruneMissing": "Fehlende bereinigen"
       },
       "notifications": {
         "created": "Bibliothek erfolgreich erstellt",
@@ -316,6 +317,8 @@
         "scanCompleted": "Bibliothek Scan vollständig",
         "quickScanStarted": "Schneller Scan gestartet",
         "fullScanStarted": "Kompletter Scan gestartet",
+        "pruneMissingCompleted": "Fehlende Dateien bereinigt",
+        "pruneMissingError": "Fehler beim Bereinigen fehlender Dateien. Logs prüfen",
         "scanError": "Fehler beim Starten des Scans. Logs prüfen"
       },
       "validation": {

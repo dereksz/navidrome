@@ -193,6 +193,7 @@ func (api *Router) addQueueRoute(r chi.Router) {
 func (api *Router) addMissingFilesRoute(r chi.Router) {
 	r.Route("/missing", func(r chi.Router) {
 		api.RX(r, "/", newMissingRepository(api.ds), false)
+		r.With(adminOnlyMiddleware).Post("/prune", pruneMissingFiles(api.maintenance))
 		r.Delete("/", deleteMissingFiles(api.maintenance))
 	})
 }

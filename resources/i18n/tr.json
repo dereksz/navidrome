@@ -303,7 +303,8 @@
         "manageUsers": "Kullanıcı Erişimini Yönet",
         "viewDetails": "Ayrıntıları Görüntüle",
         "quickScan": "Hızlı Tarama",
-        "fullScan": "Tam Tarama"
+        "fullScan": "Tam Tarama",
+        "pruneMissing": "Eksikleri temizle"
       },
       "notifications": {
         "created": "Kütüphane başarıyla oluşturuldu",
@@ -313,6 +314,8 @@
         "scanCompleted": "Kütüphane taraması tamamlandı",
         "quickScanStarted": "Hızlı tarama başlatıldı",
         "fullScanStarted": "Tam tarama başlatıldı",
+        "pruneMissingCompleted": "Eksik dosyalar temizlendi",
+        "pruneMissingError": "Eksik dosyalar temizlenirken hata oluştu. Günlükleri kontrol edin",
         "scanError": "Tarama başlatılırken hata oluştu. Günlükleri kontrol edin."
       },
       "validation": {

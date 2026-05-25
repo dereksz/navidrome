@@ -306,7 +306,8 @@
         "manageUsers": "Xestionar acceso das usuarias",
         "viewDetails": "Ver detalles",
         "quickScan": "Escaneado rápido",
-        "fullScan": "Escaneado completo"
+        "fullScan": "Escaneado completo",
+        "pruneMissing": "Purgar ausentes"
       },
       "notifications": {
         "created": "Biblioteca creada correctamente",
@@ -316,6 +317,8 @@
         "scanCompleted": "Completouse o escaneado da biblioteca",
         "quickScanStarted": "Iniciado o escaneado rápido",
         "fullScanStarted": "Iniciado o escaneado completo",
+        "pruneMissingCompleted": "Ficheiros ausentes purgados",
+        "pruneMissingError": "Erro ao purgar ficheiros ausentes. Comproba o rexistro",
         "scanError": "Erro ao escanear. Comproba o rexistro"
       },
       "validation": {

@@ -306,7 +306,8 @@
         "manageUsers": "Beheer gebruikerstoegang",
         "viewDetails": "Bekijk details",
         "quickScan": "Snelle scan",
-        "fullScan": "Volledige scan"
+        "fullScan": "Volledige scan",
+        "pruneMissing": "Ontbrekende opschonen"
       },
       "notifications": {
         "created": "Bibliotheek succesvol aangemaakt",
@@ -316,6 +317,8 @@
         "scanCompleted": "Bibliotheekscan is voltooid",
         "quickScanStarted": "Snelle scan gestart",
         "fullScanStarted": "Volledige scan gestart",
+        "pruneMissingCompleted": "Ontbrekende bestanden opgeschoond",
+        "pruneMissingError": "Fout bij opschonen van ontbrekende bestanden. Controleer de logs",
         "scanError": "Fout bij start van scan. Check de logs"
       },
       "validation": {

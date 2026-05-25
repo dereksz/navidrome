@@ -306,7 +306,8 @@
         "manageUsers": "Hantera användaråtkomst",
         "viewDetails": "Se detaljer",
         "quickScan": "Snabbscan",
-        "fullScan": "Komplett scan"
+        "fullScan": "Komplett scan",
+        "pruneMissing": "Rensa saknade"
       },
       "notifications": {
         "created": "Biblioteket har skapats",
@@ -316,6 +317,8 @@
         "scanCompleted": "Biblioteksscan avslutad",
         "quickScanStarted": "Snabbscan startad",
         "fullScanStarted": "Komplett scan startad",
+        "pruneMissingCompleted": "Saknade filer rensade",
+        "pruneMissingError": "Fel vid rensning av saknade filer. Se loggarna",
         "scanError": "Fel vid start av scan. Se loggarna"
       },
       "validation": {

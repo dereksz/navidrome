@@ -1,6 +1,7 @@
 import React, { cloneElement } from 'react'
 import { sanitizeListRestProps, TopToolbar, CreateButton } from 'react-admin'
 import LibraryScanButton from './LibraryScanButton'
+import PruneMissingButton from './PruneMissingButton'
 
 const LibraryListActions = ({
   className,
@@ -23,6 +24,7 @@ const LibraryListActions = ({
         })}
       <LibraryScanButton fullScan={false} />
       <LibraryScanButton fullScan={true} />
+      <PruneMissingButton />
       <CreateButton />
     </TopToolbar>
   )

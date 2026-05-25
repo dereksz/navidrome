@@ -305,7 +305,8 @@
         "manageUsers": "Kelola Akses Pengguna",
         "viewDetails": "Lihat Detail",
         "quickScan": "Pindai Cepat",
-        "fullScan": "Pindai Keseluruhan"
+        "fullScan": "Pindai Keseluruhan",
+        "pruneMissing": "Pangkas yang hilang"
       },
       "notifications": {
         "created": "Pustaka berhasil dibuat",
@@ -315,6 +316,8 @@
         "scanCompleted": "Memindai pustaka selesai",
         "quickScanStarted": "Pemindaian cepat dimulai",
         "fullScanStarted": "Pemindaian keseluruhan dimulai",
+        "pruneMissingCompleted": "Berkas yang hilang dipangkas",
+        "pruneMissingError": "Kesalahan saat memangkas berkas yang hilang. Periksa log",
         "scanError": "Kesalahan saat memulai pemindaian. Periksa log"
       },
       "validation": {

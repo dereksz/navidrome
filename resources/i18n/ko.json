@@ -301,6 +301,7 @@
       },
       "actions": {
         "scan": "라이브러리 스캔",
+        "pruneMissing": "누락 항목 정리",
         "manageUsers": "자용자 접속 관리",
         "viewDetails": "상세 보기"
       },
@@ -309,7 +310,9 @@
         "updated": "라이브러리가 성공적으로 업데이트됨",
         "deleted": "라이브러리가 성공적으로 삭제됨",
         "scanStarted": "라이브러리 스캔 스작됨",
-        "scanCompleted": "라이브러리 스캔 완료됨"
+        "scanCompleted": "라이브러리 스캔 완료됨",
+        "pruneMissingCompleted": "누락된 파일이 정리되었습니다",
+        "pruneMissingError": "누락된 파일 정리 중 오류가 발생했습니다. 로그를 확인하세요"
       },
       "validation": {
         "nameRequired": "라이브러리 이름이 필요함",

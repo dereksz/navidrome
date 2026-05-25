@@ -308,7 +308,8 @@
         "manageUsers": "Gerenciar Acesso do Usuário",
         "viewDetails": "Ver Detalhes",
         "quickScan": "Scan Rápido",
-        "fullScan": "Scan Completo"
+        "fullScan": "Scan Completo",
+        "pruneMissing": "Limpar ausentes"
       },
       "notifications": {
         "created": "Biblioteca criada com sucesso",
@@ -318,6 +319,8 @@
         "scanCompleted": "Scan da biblioteca concluída",
         "quickScanStarted": "Scan rápido iniciado",
         "fullScanStarted": "Scan completo iniciado",
+        "pruneMissingCompleted": "Arquivos ausentes limpos",
+        "pruneMissingError": "Erro ao limpar arquivos ausentes. Verifique os logs",
         "scanError": "Erro ao iniciar o scan. Verifique os logs"
       },
       "validation": {

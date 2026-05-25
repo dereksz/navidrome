@@ -306,7 +306,8 @@
         "manageUsers": "Gestiona l'accés d'usuari",
         "viewDetails": "Mostra els detalls",
         "quickScan": "Escaneig ràpid",
-        "fullScan": "Escaneig complet"
+        "fullScan": "Escaneig complet",
+        "pruneMissing": "Neteja els absents"
       },
       "notifications": {
         "created": "La biblioteca s'ha creat correctament",
@@ -316,6 +317,8 @@
         "scanCompleted": "S'ha completat l'escaneig de la biblioteca",
         "quickScanStarted": "Començant escaneig ràpid",
         "fullScanStarted": "Començant escaneig complet",
+        "pruneMissingCompleted": "Fitxers absents netejats",
+        "pruneMissingError": "Error en netejar els fitxers absents. Comproveu els registres",
         "scanError": "S'ha produït un error en començar l'escaneig. Comproveu els registres"
       },
       "validation": {
