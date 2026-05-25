@@ -106,6 +106,7 @@
         "name": "名前",
         "albumCount": "アルバム枚数",
         "songCount": "曲数",
+        "singlesCount": "シングル数",
         "playCount": "再生数",
         "rating": "レート",
         "genre": "ジャンル",

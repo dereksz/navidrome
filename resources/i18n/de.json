@@ -109,6 +109,7 @@
         "name": "Name",
         "albumCount": "Albumanzahl",
         "songCount": "Titelanzahl",
+        "singlesCount": "Singleanzahl",
         "playCount": "Wiedergaben",
         "rating": "Bewertung",
         "genre": "Genre",

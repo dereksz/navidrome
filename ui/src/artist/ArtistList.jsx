@@ -141,6 +141,7 @@ const ArtistListView = ({ hasShow, hasEdit, hasList, width, ...rest }) => {
   }
   const getAlbumCount = (record) => getCounter(record, 'albumCount')
   const getSongCount = (record) => getCounter(record, 'songCount')
+  const getSinglesCount = (record) => getCounter(record, 'singlesCount')
   const getSize = (record) => {
     const size = getCounter(record, 'size')
     return size ? formatBytes(size) : '0 MB'
@@ -184,6 +185,12 @@ const ArtistListView = ({ hasShow, hasEdit, hasList, width, ...rest }) => {
         source="songCount"
         sortByOrder={'DESC'}
         render={getSongCount}
+      />
+      <FunctionField
+        source="singlesCount"
+        sortBy="singles_count"
+        sortByOrder={'DESC'}
+        render={getSinglesCount}
       />
       <FunctionField source="size" sortByOrder={'DESC'} render={getSize} />
       {columns}

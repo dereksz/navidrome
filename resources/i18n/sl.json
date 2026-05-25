@@ -109,6 +109,7 @@
         "name": "Ime",
         "albumCount": "# albumov",
         "songCount": "# pesmi",
+        "singlesCount": "Število singlov",
         "playCount": "# predvajanj",
         "rating": "Ocena",
         "genre": "Žanr",

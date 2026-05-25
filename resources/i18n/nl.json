@@ -109,6 +109,7 @@
         "name": "Naam",
         "albumCount": "Aantal albums",
         "songCount": "Aantal nummers",
+        "singlesCount": "Aantal singles",
         "playCount": "Afgespeeld",
         "rating": "Beoordeling",
         "genre": "Genre",

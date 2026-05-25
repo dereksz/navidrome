@@ -108,6 +108,7 @@
         "name": "Nama",
         "albumCount": "Jumlah Album",
         "songCount": "Jumlah Lagu",
+        "singlesCount": "Jumlah singel",
         "playCount": "Diputar",
         "rating": "Peringkat",
         "genre": "Genre",

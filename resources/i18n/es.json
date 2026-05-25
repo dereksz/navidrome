@@ -109,6 +109,7 @@
         "name": "Nombre",
         "albumCount": "Número de álbumes",
         "songCount": "Número de canciones",
+        "singlesCount": "Número de sencillos",
         "playCount": "Reproducciones",
         "rating": "Calificación",
         "genre": "Género",

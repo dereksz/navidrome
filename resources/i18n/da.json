@@ -109,6 +109,7 @@
         "name": "Navn",
         "albumCount": "Antal albums",
         "songCount": "Antal sange",
+        "singlesCount": "Antal singler",
         "playCount": "Afspilninger",
         "rating": "Bedømmelse",
         "genre": "Genre",

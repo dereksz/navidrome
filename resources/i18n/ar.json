@@ -86,6 +86,7 @@
                 "name": "الاسم",
                 "albumCount": "عدد الألبومات",
                 "songCount": "عدد الصوتيات",
+                "singlesCount": "عدد الأغاني المنفردة",
                 "playCount": "التشغيلات",
                 "rating": "التقييم",
                 "genre": "النوع",

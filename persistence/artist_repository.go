@@ -52,9 +52,10 @@ func (a *dbArtist) PostScan() error {
 			for key, stat := range stats {
 				// Aggregate stats into the main Artist.Stats map
 				artistStats := model.ArtistStats{
-					SongCount:  int(stat["m"]),
-					AlbumCount: int(stat["a"]),
-					Size:       stat["s"],
+					SongCount:    int(stat["m"]),
+					AlbumCount:   int(stat["a"]),
+					SinglesCount: int(stat["singles"]),
+					Size:         stat["s"],
 				}
 
 				// Store total stats into the main attributes
@@ -62,6 +63,7 @@ func (a *dbArtist) PostScan() error {
 					a.Artist.Size += artistStats.Size
 					a.Artist.SongCount += artistStats.SongCount
 					a.Artist.AlbumCount += artistStats.AlbumCount
+					a.Artist.SinglesCount += artistStats.SinglesCount
 				}
 
 				role := model.RoleFromString(key)
@@ -142,12 +144,13 @@ func NewArtistRepository(ctx context.Context, db dbx.Builder) model.ArtistReposi
 		"library_id": artistLibraryIdFilter,
 	})
 	r.setSortMappings(map[string]string{ //nolint:gosec
-		"name":        "order_artist_name",
-		"starred_at":  "starred, starred_at",
-		"rated_at":    "rating, rated_at",
-		"song_count":  "stats->>'total'->>'m'",
-		"album_count": "stats->>'total'->>'a'",
-		"size":        "stats->>'total'->>'s'",
+		"name":          "order_artist_name",
+		"starred_at":    "starred, starred_at",
+		"rated_at":      "rating, rated_at",
+		"song_count":    "stats->>'total'->>'m'",
+		"album_count":   "stats->>'total'->>'a'",
+		"singles_count": "stats->>'total'->>'singles'",
+		"size":          "stats->>'total'->>'s'",
 
 		// Stats by credits that are currently available
 		"maincredit_song_count":  "sum(stats->>'maincredit'->>'m')",
@@ -434,11 +437,35 @@ func (r *artistRepository) RefreshStats(allArtists bool) (int64, error) {
                mfa.role,
                count(DISTINCT mf.album_id) AS album_count,
                count(DISTINCT mf.id) AS count,
-               sum(mf.size) AS size
+               sum(mf.size) AS size,
+               0 AS singles_count
         FROM media_file_artists mfa
         JOIN media_file mf ON mfa.media_file_id = mf.id
         WHERE mfa.artist_id IN (ROLE_IDS_PLACEHOLDER) -- Will replace with actual placeholders
         GROUP BY mfa.artist_id, mf.library_id, mfa.role
+    ),
+    artist_singles_counters AS (
+        SELECT mfa.artist_id,
+               mf.library_id,
+               count(DISTINCT mf.id) AS singles_count
+        FROM media_file_artists mfa
+        JOIN media_file mf ON mfa.media_file_id = mf.id
+        WHERE mfa.artist_id IN (ROLE_IDS_PLACEHOLDER) -- Will replace with actual placeholders
+        AND mfa.role = 'artist'
+        AND EXISTS (
+            SELECT 1
+            FROM album_artists aa
+            WHERE aa.album_id = mf.album_id
+              AND aa.role = 'albumartist'
+        )
+        AND NOT EXISTS (
+            SELECT 1
+            FROM album_artists aa
+            WHERE aa.album_id = mf.album_id
+              AND aa.role = 'albumartist'
+              AND aa.artist_id = mfa.artist_id
+        )
+        GROUP BY mfa.artist_id, mf.library_id
     ),
     artist_total_counters AS (
         SELECT mfa.artist_id,
@@ -446,9 +473,13 @@ func (r *artistRepository) RefreshStats(allArtists bool) (int64, error) {
                'total' AS role,
                count(DISTINCT mf.album_id) AS album_count,
                count(DISTINCT mf.id) AS count,
-               sum(mf.size) AS size
+               sum(mf.size) AS size,
+               coalesce(singles.singles_count, 0) AS singles_count
         FROM media_file_artists mfa
         JOIN media_file mf ON mfa.media_file_id = mf.id
+        LEFT JOIN artist_singles_counters singles
+               ON singles.artist_id = mfa.artist_id
+              AND singles.library_id = mf.library_id
         WHERE mfa.artist_id IN (ROLE_IDS_PLACEHOLDER) -- Will replace with actual placeholders
         GROUP BY mfa.artist_id, mf.library_id
     ),
@@ -458,7 +489,8 @@ func (r *artistRepository) RefreshStats(allArtists bool) (int64, error) {
                'maincredit' AS role,
                count(DISTINCT mf.album_id) AS album_count,
                count(DISTINCT mf.id) AS count,
-               sum(mf.size) AS size
+               sum(mf.size) AS size,
+               0 AS singles_count
         FROM media_file_artists mfa
         JOIN media_file mf ON mfa.media_file_id = mf.id
         WHERE mfa.artist_id IN (ROLE_IDS_PLACEHOLDER) -- Will replace with actual placeholders
@@ -466,18 +498,18 @@ func (r *artistRepository) RefreshStats(allArtists bool) (int64, error) {
         GROUP BY mfa.artist_id, mf.library_id
     ),
     combined_counters AS (
-        SELECT artist_id, library_id, role, album_count, count, size FROM artist_role_counters
+        SELECT artist_id, library_id, role, album_count, count, size, singles_count FROM artist_role_counters
         UNION ALL
-        SELECT artist_id, library_id, role, album_count, count, size FROM artist_total_counters
+        SELECT artist_id, library_id, role, album_count, count, size, singles_count FROM artist_total_counters
         UNION ALL
-        SELECT artist_id, library_id, role, album_count, count, size FROM artist_participant_counter
+        SELECT artist_id, library_id, role, album_count, count, size, singles_count FROM artist_participant_counter
     ),
     library_artist_counters AS (
         SELECT artist_id,
                library_id,
                json_group_object(
                        role,
-                       json_object('a', album_count, 'm', count, 's', size)
+                       json_object('a', album_count, 'm', count, 's', size, 'singles', singles_count)
                ) AS counters
         FROM combined_counters
         GROUP BY artist_id, library_id
@@ -505,13 +537,13 @@ func (r *artistRepository) RefreshStats(allArtists bool) (int64, error) {
 		inClause := strings.Join(placeholders, ",")
 
 		// Replace the placeholder markers with actual SQL placeholders
-		batchSQL := strings.Replace(batchUpdateStatsSQL, "ROLE_IDS_PLACEHOLDER", inClause, 4)
+		batchSQL := strings.Replace(batchUpdateStatsSQL, "ROLE_IDS_PLACEHOLDER", inClause, 5)
 
-		// Create a single parameter array with all IDs (repeated 4 times for each IN clause)
-		// We need to repeat each ID 4 times (once for each IN clause)
-		args := make([]any, 4*len(artistIDBatch))
+		// Create a single parameter array with all IDs (repeated 5 times for each IN clause)
+		// We need to repeat each ID 5 times (once for each IN clause)
+		args := make([]any, 5*len(artistIDBatch))
 		for idx, id := range artistIDBatch {
-			for i := range 4 {
+			for i := range 5 {
 				startIdx := i * len(artistIDBatch)
 				args[startIdx+idx] = id
 			}
@@ -580,6 +612,7 @@ func (r *artistRepository) ReadAll(options ...rest.QueryOptions) (any, error) {
 	}
 	r.sortMappings["song_count"] = "sum(stats->>'" + role + "'->>'m')"
 	r.sortMappings["album_count"] = "sum(stats->>'" + role + "'->>'a')"
+	r.sortMappings["singles_count"] = "sum(stats->>'" + role + "'->>'singles')"
 	r.sortMappings["size"] = "sum(stats->>'" + role + "'->>'s')"
 	return r.GetAll(r.parseRestOptions(r.ctx, options...))
 }

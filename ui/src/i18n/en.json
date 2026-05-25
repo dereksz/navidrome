@@ -111,6 +111,7 @@
         "name": "Name",
         "albumCount": "Album Count",
         "songCount": "Song Count",
+        "singlesCount": "Singles Count",
         "size": "Size",
         "playCount": "Plays",
         "rating": "Rating",

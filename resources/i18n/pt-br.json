@@ -111,6 +111,7 @@
         "name": "Nome",
         "albumCount": "Total de Álbuns",
         "songCount": "Total de Músicas",
+        "singlesCount": "Número de singles",
         "playCount": "Execuções",
         "rating": "Classificação",
         "genre": "Gênero",

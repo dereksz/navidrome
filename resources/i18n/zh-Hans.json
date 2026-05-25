@@ -109,6 +109,7 @@
         "name": "名称",
         "albumCount": "专辑数",
         "songCount": "歌曲数",
+        "singlesCount": "单曲数",
         "size": "文件大小",
         "playCount": "播放次数",
         "rating": "评分",

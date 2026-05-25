@@ -106,6 +106,7 @@
         "name": "Naziv",
         "albumCount": "Broj albuma",
         "songCount": "Broj pjesama",
+        "singlesCount": "Broj singlova",
         "playCount": "Reprodukcija",
         "rating": "Ocjena",
         "genre": "Žanr",
