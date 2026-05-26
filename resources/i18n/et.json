@@ -111,6 +111,7 @@
         "name": "Nimi",
         "albumCount": "Albumeid",
         "songCount": "Lugusid",
+        "singlesCount": "Singlite arv",
         "playCount": "Esituskordi",
         "rating": "Hinnang",
         "genre": "Žanr",

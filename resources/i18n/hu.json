@@ -109,6 +109,7 @@
         "name": "Név",
         "albumCount": "Albumok száma",
         "songCount": "Számok száma",
+        "singlesCount": "Kislemezek száma",
         "playCount": "Lejátszások",
         "rating": "Értékelés",
         "genre": "Stílus",

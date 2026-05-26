@@ -24,6 +24,9 @@ type Artist struct {
 	Size       int64                `structs:"-" json:"size,omitempty"`
 	AlbumCount int                  `structs:"-" json:"albumCount,omitempty"`
 	SongCount  int                  `structs:"-" json:"songCount,omitempty"`
+	// SinglesCount is the number of primary track-artist credits where this artist
+	// is not also credited as the album artist.
+	SinglesCount int `structs:"-" json:"singlesCount,omitempty"`
 
 	// Data imported from external sources
 	Biography             string     `structs:"biography" json:"biography,omitempty"`
@@ -43,9 +46,10 @@ type Artist struct {
 }
 
 type ArtistStats struct {
-	SongCount  int   `json:"songCount"`
-	AlbumCount int   `json:"albumCount"`
-	Size       int64 `json:"size"`
+	SongCount    int   `json:"songCount"`
+	AlbumCount   int   `json:"albumCount"`
+	SinglesCount int   `json:"singlesCount,omitempty"`
+	Size         int64 `json:"size"`
 }
 
 func (a Artist) ArtistImageUrl() string {

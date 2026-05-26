@@ -111,6 +111,7 @@
                 "name": "Nome",
                 "albumCount": "Album",
                 "songCount": "Numero tracce",
+                "singlesCount": "Numero di singoli",
                 "size": "Dimensione",
                 "playCount": "Riproduzioni",
                 "rating": "Valutazione",

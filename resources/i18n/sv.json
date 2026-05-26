@@ -109,6 +109,7 @@
         "name": "Namn",
         "albumCount": "Antal album",
         "songCount": "Antal låtar",
+        "singlesCount": "Antal singlar",
         "playCount": "Spelningar",
         "rating": "Betyg",
         "genre": "Genre",

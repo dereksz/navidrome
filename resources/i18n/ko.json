@@ -105,6 +105,7 @@
         "name": "이름",
         "albumCount": "앨범 수",
         "songCount": "노래 수",
+        "singlesCount": "싱글 수",
         "size": "크기",
         "playCount": "재생 횟수",
         "rating": "평가",

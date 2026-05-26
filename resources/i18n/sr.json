@@ -111,6 +111,7 @@
         "name": "Назив",
         "albumCount": "Број албума",
         "songCount": "Број песама",
+        "singlesCount": "Број синглова",
         "size": "Величина",
         "playCount": "Пуштано",
         "rating": "Рејтинг",

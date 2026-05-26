@@ -125,7 +125,7 @@ var _ = Describe("ArtistRepository", func() {
 				It("parses stats and similar artists correctly", func() {
 					stats := map[string]map[string]map[string]int64{
 						"1": {
-							"total":    {"s": 1000, "m": 10, "a": 2},
+							"total":    {"s": 1000, "m": 10, "a": 2, "singles": 3},
 							"composer": {"s": 500, "m": 5, "a": 1},
 						},
 					}
@@ -138,6 +138,7 @@ var _ = Describe("ArtistRepository", func() {
 					Expect(dba.Artist.Size).To(Equal(int64(1000)))
 					Expect(dba.Artist.SongCount).To(Equal(10))
 					Expect(dba.Artist.AlbumCount).To(Equal(2))
+					Expect(dba.Artist.SinglesCount).To(Equal(3))
 					Expect(dba.Artist.Stats).To(HaveLen(1))
 					Expect(dba.Artist.Stats[model.RoleFromString("composer")].Size).To(Equal(int64(500)))
 					Expect(dba.Artist.Stats[model.RoleFromString("composer")].SongCount).To(Equal(5))

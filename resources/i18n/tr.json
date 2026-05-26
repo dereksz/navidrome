@@ -106,6 +106,7 @@
         "name": "İsim",
         "albumCount": "Albüm Sayısı",
         "songCount": "Şarkı Sayısı",
+        "singlesCount": "Tekli sayısı",
         "playCount": "Oynatmalar",
         "rating": "Derecelendirme",
         "genre": "Tür",
