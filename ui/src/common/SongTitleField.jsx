@@ -2,12 +2,13 @@ import { makeStyles } from '@material-ui/core/styles'
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
-import { FunctionField } from 'react-admin'
+import { FunctionField, usePermissions } from 'react-admin'
 import { useTheme } from '@material-ui/core/styles'
 import PlayingLight from '../icons/playing-light.gif'
 import PlayingDark from '../icons/playing-dark.gif'
 import PausedLight from '../icons/paused-light.png'
 import PausedDark from '../icons/paused-dark.png'
+import { formatPath } from './PathField'
 
 const useStyles = makeStyles({
   icon: {
@@ -30,6 +31,7 @@ export const SongTitleField = ({ showTrackNumbers, ...props }) => {
   const theme = useTheme()
   const classes = useStyles()
   const { record } = props
+  const { permissions } = usePermissions()
   const currentTrack = useSelector((state) => state?.player?.current || {})
   const currentId = currentTrack.trackId
   const paused = currentTrack.paused
@@ -40,18 +42,24 @@ export const SongTitleField = ({ showTrackNumbers, ...props }) => {
 
   const trackName = (r) => {
     const name = r.title
+    const pathTitle = formatPath(r, permissions) || undefined
+    const content =
+      r.trackNumber && showTrackNumbers
+        ? r.trackNumber.toString().padStart(2, '0') + ' ' + name
+        : name
+
     if (r.trackNumber && showTrackNumbers) {
-      return r.trackNumber.toString().padStart(2, '0') + ' ' + name
+      return <span title={pathTitle}>{content}</span>
     }
     if (subtitle) {
       return (
-        <>
-          {name}
+        <span title={pathTitle}>
+          {content}
           <span className={classes.subtitle}>{' (' + subtitle + ')'}</span>
-        </>
+        </span>
       )
     }
-    return name
+    return <span title={pathTitle}>{content}</span>
   }
 
   const Icon = () => {

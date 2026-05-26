@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { PathField } from './PathField'
+import { formatPath, PathField } from './PathField'
 import { usePermissions, useRecordContext } from 'react-admin'
 import config from '../config'
 
@@ -20,6 +20,7 @@ vi.mock('../config', () => ({
 describe('PathField', () => {
   beforeEach(() => {
     vi.clearAllMocks()
+    config.separator = '/'
   })
 
   it('renders path without libraryPath for non-admin users', () => {
@@ -82,5 +83,9 @@ describe('PathField', () => {
 
     // Assert
     expect(container.textContent).toBe('C:\\data\\music\\song.mp3')
+  })
+
+  it('formats an empty path as an empty string', () => {
+    expect(formatPath({}, 'admin')).toBe('')
   })
 })

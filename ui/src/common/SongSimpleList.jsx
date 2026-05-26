@@ -6,11 +6,12 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction'
 import ListItemText from '@material-ui/core/ListItemText'
 import { makeStyles } from '@material-ui/core/styles'
-import { sanitizeListRestProps } from 'react-admin'
+import { sanitizeListRestProps, usePermissions } from 'react-admin'
 import { DurationField, SongContextMenu, RatingField } from './index'
 import { setTrack } from '../actions'
 import { useDispatch } from 'react-redux'
 import config from '../config'
+import { formatPath } from './PathField'
 
 const useStyles = makeStyles(
   {
@@ -64,7 +65,9 @@ export const SongSimpleList = ({
   ...rest
 }) => {
   const dispatch = useDispatch()
+  const { permissions } = usePermissions()
   const classes = useStyles({ classes: classesOverride })
+  const getPathTitle = (record) => formatPath(record, permissions) || undefined
   return (
     (loading || total > 0) && (
       <List className={className} {...sanitizeListRestProps(rest)}>
@@ -75,7 +78,12 @@ export const SongSimpleList = ({
                 <ListItem className={classes.listItem} button={true}>
                   <ListItemText
                     primary={
-                      <div className={classes.title}>{data[id].title}</div>
+                      <div
+                        className={classes.title}
+                        title={getPathTitle(data[id])}
+                      >
+                        {data[id].title}
+                      </div>
                     }
                     secondary={
                       <>
